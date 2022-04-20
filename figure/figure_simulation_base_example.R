@@ -6,7 +6,7 @@ source("../R/viraltraj.R")
 source("../R/util.R")
 load("../simulation/simulation_base_example.rda")
 
-t_ct <- seq(20, 80, by=1)
+t_ct <- seq(40, 120, by=1)
 
 daily_data <- incidence_to_daily(simulation_base_example)
 
@@ -54,7 +54,7 @@ ct_data_summary <- ct_data_comb  %>%
 g1 <- ggplot(daily_data) +
   geom_point(aes(time, incidence)) +
   geom_line(aes(time, incidence)) +
-  scale_x_continuous("Time (days)", limits=c(0, 100), expand=c(0, 0)) +
+  scale_x_continuous("Time (days)", limits=c(0, 140), expand=c(0, 0)) +
   scale_y_continuous("Daily new infections", expand=c(0, 0), limits=c(0, 1800)) +
   theme(
     panel.grid = element_blank()
@@ -63,7 +63,7 @@ g1 <- ggplot(daily_data) +
 g2 <- ggplot(ct_data_summary) +
   geom_point(aes(t_sample, mean_tinf, col=type)) +
   geom_smooth(aes(t_sample, mean_tinf, col=type, fill=type)) +
-  scale_x_continuous("Time (days)", limits=c(0, 100), expand=c(0, 0)) +
+  scale_x_continuous("Time (days)", limits=c(0, 140), expand=c(0, 0)) +
   scale_y_continuous("Mean time since infection (days)") +
   scale_color_viridis_d() +
   scale_fill_viridis_d() +
@@ -77,7 +77,7 @@ g2 <- ggplot(ct_data_summary) +
 g3 <- ggplot(ct_data_summary) +
   geom_point(aes(t_sample, -mean_ct, col=type)) +
   geom_smooth(aes(t_sample, -mean_ct, col=type, fill=type)) +
-  scale_x_continuous("Time (days)", limits=c(0, 100), expand=c(0, 0)) +
+  scale_x_continuous("Time (days)", limits=c(0, 140), expand=c(0, 0)) +
   scale_y_continuous("Mean Ct values (days)",
                      breaks=c(-21, -24, -27, -30, -33),
                      labels=c(21, 24, 27, 30, 33)) +
@@ -95,7 +95,7 @@ ggsave("figure_simulation_base_example.pdf", gcomb, width=8, height=8)
 g4 <- ggplot(ct_data_summary) +
   geom_point(aes(t_sample, mean_a, col=type)) +
   geom_smooth(aes(t_sample, mean_a, col=type, fill=type)) +
-  scale_x_continuous("Time (days)", limits=c(0, 100), expand=c(0, 0)) +
+  scale_x_continuous("Time (days)", limits=c(0, 140), expand=c(0, 0)) +
   scale_y_continuous("Mean viral load growth rate (1/day)",) +
   scale_color_viridis_d() +
   scale_fill_viridis_d() +
@@ -107,7 +107,7 @@ g4 <- ggplot(ct_data_summary) +
 g5 <- ggplot(ct_data_summary) +
   geom_point(aes(t_sample, mean_log_v_max, col=type)) +
   geom_smooth(aes(t_sample, mean_log_v_max, col=type, fill=type)) +
-  scale_x_continuous("Time (days)", limits=c(0, 100), expand=c(0, 0)) +
+  scale_x_continuous("Time (days)", limits=c(0, 140), expand=c(0, 0)) +
   scale_y_continuous("Mean maximum log10(viral load)") +
   scale_color_viridis_d() +
   scale_fill_viridis_d() +
@@ -119,7 +119,7 @@ g5 <- ggplot(ct_data_summary) +
 g6 <- ggplot(ct_data_summary) +
   geom_point(aes(t_sample, mean_tau_max, col=type)) +
   geom_smooth(aes(t_sample, mean_tau_max, col=type, fill=type)) +
-  scale_x_continuous("Time (days)", limits=c(0, 100), expand=c(0, 0)) +
+  scale_x_continuous("Time (days)", limits=c(0, 140), expand=c(0, 0)) +
   scale_y_continuous("Mean time to peak viral load (days)") +
   scale_color_viridis_d() +
   scale_fill_viridis_d() +
@@ -131,7 +131,7 @@ g6 <- ggplot(ct_data_summary) +
 g7 <- ggplot(ct_data_summary) +
   geom_point(aes(t_sample, mean_inc, col=type)) +
   geom_smooth(aes(t_sample, mean_inc, col=type, fill=type)) +
-  scale_x_continuous("Time (days)", limits=c(0, 100), expand=c(0, 0)) +
+  scale_x_continuous("Time (days)", limits=c(0, 140), expand=c(0, 0)) +
   scale_y_continuous("Mean incubation period (days)") +
   scale_color_viridis_d() +
   scale_fill_viridis_d() +

@@ -19,7 +19,7 @@ simepi <- function(n=50000,
                    taudiff=0.1,
                    seed = NULL,
                    imax,
-                   tmax=100){
+                   tmax=300){
   if (!is.null(seed)) set.seed(seed)
   
   V <- 1:n
