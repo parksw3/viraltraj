@@ -14,6 +14,10 @@ simgrowth <- function(r=0.1,
     
   param <- priorfun(length(t_infected))
   
+  param$k <- k
+  
+  param$r <- r
+  
   return(
     list(
       data=data.frame(

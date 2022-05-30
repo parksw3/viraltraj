@@ -1,0 +1,77 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(shellpipes)
+> 
+> commandEnvironments()
+> 
+> startGraphics()
+> 
+> input_files <- fileSelect(commandArgs(TRUE), 
++ 	c("csv", "tsv", "ssv", "txt", "xlsx", "xls")
++ )
+> 
+> rtargetname <- targetname()
+> csvname <- paste0(rtargetname, ".Rout.csv")
+> rdsname <- paste0(rtargetname, ".Rds")
+> rdaname <- paste0(rtargetname, ".rda")
+> 
+> sourceFiles(first=TRUE, verbose=TRUE)
+'envir' chosen:<environment: R_GlobalEnv>
+encoding = "native.enc" chosen
+--> parsed 5 expressions; now eval(.)ing them:
+
+>>>> eval(expression_nr. 1 )
+		 =================
+
+> seed <- 101
+curr.fun: symbol <-
+ .. after ‘expression(seed <- 101)’
+
+>>>> eval(expression_nr. 2 )
+		 =================
+
+> tmax <- 40
+curr.fun: symbol <-
+ .. after ‘expression(tmax <- 40)’
+
+>>>> eval(expression_nr. 3 )
+		 =================
+
+> r <- 0.1
+curr.fun: symbol <-
+ .. after ‘expression(r <- 0.1)’
+
+>>>> eval(expression_nr. 4 )
+		 =================
+
+> I0 <- 10
+curr.fun: symbol <-
+ .. after ‘expression(I0 <- 10)’
+
+>>>> eval(expression_nr. 5 )
+		 =================
+
+> k <- 100
+curr.fun: symbol <-
+ .. after ‘expression(k <- 100)’
+> 
+> saveEnvironment()
+> 
+> 
